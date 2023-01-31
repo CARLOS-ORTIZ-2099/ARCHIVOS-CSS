@@ -1,0 +1,175 @@
+/* aplicando un centrado automatico a h1 */
+
+h1{
+    color: blue;
+    background-color: gray;
+    text-align: center;
+    width: 300px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: dashed;
+}
+
+
+/* elemento inline blok */
+img{
+    width: 300px;
+    height: 200px;
+
+}
+
+
+ p{
+    background-color: palegreen;
+    color: green;
+    
+ }
+
+
+
+/* aplicando selectores descendentes, podemos ver que aqui no se esta rompiendo
+   la cascada por el simple echo de que estoy siendo explicito en lo que quiero
+   y solo se modificara los elementos que cumplan con los selectores indicados */
+
+body div p {
+background-color:skyblue;
+color: blue;
+
+}
+
+.frase{
+    color: rgb(85, 85, 153);
+    background-color: black;
+}
+
+
+
+
+/* debemos recordar que los elementos en linea no se le pueden aplicar margenes
+   automaticos */
+.im{
+    width: 400px;
+    height: 300px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.imagen{
+    margin: 10px;
+}
+
+h2{
+    background-color: khaki;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 50px;
+
+}
+
+
+/* las etiquetas del tipo a no heredan el color de su padre entonces hay que forzarlo  */
+
+a{
+    display: block;
+    color: inherit;
+   
+
+}
+
+/* aplicando selectores de atributos descendentes podriamos decir que los selectores
+   de atributo se utilizan para ser usados en conjunto con los comodines de texto para
+   facilitarnos cosas como el estar escribiendo clases extensas*/
+
+body ol [class*="dias"]{
+
+color:wheat;
+background-color: seagreen;
+margin: 0 0 20px 0;
+padding: 10px;
+
+
+}
+
+
+body ol [class^="ho"]{
+
+    color:wheat;
+    background-color: rgb(103, 139, 46);
+    margin: 10px 0 20px 0;
+    margin: 0 0 20px 0;
+    padding: 10px;
+    
+}
+
+    body ol [class$="os"]{
+
+    color:wheat;
+    background-color: rgb(48, 159, 192);
+    margin: 10px 0 20px 0;
+    margin: 0 0 20px 0;
+    /* padding: 10px; */
+}
+
+
+
+
+/* aplicando selectores de atributos normales */
+.secundario[class*="dias"]{
+    background-color: floralwhite;
+    color: green;
+    margin: 0 0 20px 0;
+    padding: 10px;
+
+}
+
+.secundario[class^="ho"]{
+    color: rgb(109, 163, 211);
+    background-color: brown;
+    margin: 0 0 20px 0;
+    padding: 10px;
+}
+
+.secundario[class$="s"]{
+    color: indigo;
+    background-color: yellowgreen;
+    margin: 0 0 20px 0;
+    padding: 10px;
+
+}
+
+
+
+
+
+/* aqui vemos que la cascada no se rompio o no aplica para ciertos elementos y debemos 
+   recordar que es por la especificidad
+   etiquetas               1
+   clases                 10 
+   id                    100
+   selectores en linea  1000   */
+
+body{
+    color :red
+}
+
+
+/* aqui lo que hago es setar el color que le habia asignado con el selector body */
+.menu{
+color:initial;
+background-color: darkgoldenrod;
+width: 200px;
+height: 100px;
+border-radius: 50px;
+margin: 10px;
+text-align: center;
+display: inline-block;
+
+}
+
+
